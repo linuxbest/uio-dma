@@ -296,8 +296,8 @@ static struct uio_dma_area *uio_dma_area_alloc(uint64_t dma_mask, unsigned int m
 		area, chunk_size, chunk_count);
 
 	gfp = GFP_KERNEL | __GFP_NOWARN;
-	if (dma_mask < DMA_64BIT_MASK) {
-		if (dma_mask < DMA_32BIT_MASK)
+	if (dma_mask < DMA_BIT_MASK(64)) {
+		if (dma_mask < DMA_BIT_MASK(32))
 			gfp |= GFP_DMA;
 		else
 			gfp |= GFP_DMA32;

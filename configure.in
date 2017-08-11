@@ -33,7 +33,7 @@ AC_SUBST(KVER)
 AC_SUBST(KVER_RPM)
 if ! test -f $KDIR/include/linux/utsrelease.h; then
 	echo Missing kernel headers
-	exit 1
+#	exit 1
 fi
 
 KVER=`sed -e 's/.*"\(.*\)"/\1/' $KDIR/include/linux/utsrelease.h`
